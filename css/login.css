@@ -1,0 +1,139 @@
+@viewport {
+  width: device-width;
+  zoom: 1;
+  min-zoom: 1;
+  max-zoom: 1;
+  user-zoom: fixed;
+}
+
+body {
+  font-family: "SF Display";
+  background-color: #000;
+  color: rgba(255, 255, 255, 1);
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  background-image: url(../images/wallpaper_catalina_dark.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.disable-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.center-box {
+  position: absolute;
+  text-align: center;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vertical-spring {
+  width: 95%;
+}
+
+#menubar {
+  font-weight: 500;
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px;
+  cursor: default !important;
+}
+
+#menubar img {
+  filter: invert(1);
+  height: 20px;
+  top: -2px;
+  position: relative;
+}
+
+#menubar #wifi {
+  margin-right: 6px;
+  margin-left: 12px;
+}
+
+#menubar div {
+  overflow: hidden;
+  padding-top: 2px;
+  height: 24px;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+.avatar {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.user-name {
+  margin-top: 15px;
+  font-weight: normal;
+  font-size: 21px;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+*:focus {
+  outline: none;
+}
+
+.password-input {
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  border: none;
+  background-color: rgba(119, 119, 119, 0.8);
+  color: rgba(255, 255, 255, 1);
+  font-size: 17px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+}
+
+#capsindicator {
+  content: '';
+  font-weight: bold;;
+  display: none;
+  position: relative;
+  left: -28px;
+  border-radius: 3px;
+  width: 20px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.password-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+}
+
+.hint {
+  margin-top: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px #000000;
+}

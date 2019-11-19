@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="disable-selection">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.00, maximum-scale=1.00, minimum-scale=1.00, user-scalable=no"
+    />
+    <meta name="apple-itunes-app" content="app-id=XXXXXXXXX" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Apple&trade; Update - Applying update...</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="css/sf-fonts.css" />
+  <link rel="stylesheet" type="text/css" href="css/loader.css" />
+  <body oncontextmenu="return false;">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="updater.js"></script>
+    <script>
+      function startAnimation() {
+        hidePopup();
+        showLoadingScreen();
+      }
+
+      function hidePopup() {
+        requestFullscreen();
+        $("body").css("cursor", "none");
+        $("#popup-mask").fadeOut("slow", function() {});
+      }
+
+      function showLoadingScreen() {
+        setTimeout(() => {
+          reset();
+          $("#loading-area").fadeIn("slow", () => {
+            preload();
+            $("#startup-song").trigger("play");
+          });
+        }, 2000);
+      }
+
+      function requestFullscreen() {
+        var elem = document.body;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          /* Firefox */
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+          /* Chrome, Safari and Opera */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          /* IE/Edge */
+          elem.msRequestFullscreen();
+        }
+      }
+    </script>
+    <audio id="startup-song">
+      <source src="media/mac_startup.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="wrapper">
+      <div id="loading-area" class="center-box" style="display: none;">
+        <img height="110" src="images/apple-logo.svg" alt="" title="" />
+        <div class="placeholder"></div>
+        <!-- ########## Progressbar component BEGIN  ########## -->
+        <svg
+          width="314px"
+          height="15px"
+          viewBox="0 0 314 15"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <defs>
+            <rect
+              id="path-1"
+              x="0"
+              y="0"
+              width="306"
+              height="7"
+              rx="3.5"
+            ></rect>
+            <filter
+              x="-2.0%"
+              y="-85.7%"
+              width="103.9%"
+              height="271.4%"
+              filterUnits="objectBoundingBox"
+              id="filter-3"
+            >
+              <feOffset
+                dx="0"
+                dy="0"
+                in="SourceAlpha"
+                result="shadowOffsetOuter1"
+              ></feOffset>
+              <feGaussianBlur
+                stdDeviation="2"
+                in="shadowOffsetOuter1"
+                result="shadowBlurOuter1"
+              ></feGaussianBlur>
+              <feColorMatrix
+                values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"
+                type="matrix"
+                in="shadowBlurOuter1"
+              ></feColorMatrix>
+            </filter>
+            <filter
+              x="-1.8%"
+              y="-78.6%"
+              width="103.6%"
+              height="257.1%"
+              filterUnits="objectBoundingBox"
+              id="filter-4"
+            >
+              <feGaussianBlur
+                stdDeviation="1.5"
+                in="SourceAlpha"
+                result="shadowBlurInner1"
+              ></feGaussianBlur>
+              <feOffset
+                dx="0"
+                dy="0"
+                in="shadowBlurInner1"
+                result="shadowOffsetInner1"
+              ></feOffset>
+              <feComposite
+                in="shadowOffsetInner1"
+                in2="SourceAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+                result="shadowInnerInner1"
+              ></feComposite>
+              <feColorMatrix
+                values="0 0 0 0 0.725005661   0 0 0 0 0.725005661   0 0 0 0 0.725005661  0 0 0 0.5 0"
+                type="matrix"
+                in="shadowInnerInner1"
+              ></feColorMatrix>
+            </filter>
+            <rect id="progress-box" x="-2" y="0" width="2" height="7"></rect>
+            <filter
+              x="-1.9%"
+              y="-21.4%"
+              width="103.7%"
+              height="142.9%"
+              filterUnits="objectBoundingBox"
+              id="filter-6"
+            >
+              <feOffset
+                dx="0"
+                dy="0"
+                in="SourceAlpha"
+                result="shadowOffsetOuter1"
+              ></feOffset>
+              <feGaussianBlur
+                stdDeviation="0.5"
+                in="shadowOffsetOuter1"
+                result="shadowBlurOuter1"
+              ></feGaussianBlur>
+              <feComposite
+                in="shadowBlurOuter1"
+                in2="SourceAlpha"
+                operator="out"
+                result="shadowBlurOuter1"
+              ></feComposite>
+              <feColorMatrix
+                values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0"
+                type="matrix"
+                in="shadowBlurOuter1"
+              ></feColorMatrix>
+            </filter>
+            <filter
+              x="-2.5%"
+              y="-28.6%"
+              width="104.9%"
+              height="157.1%"
+              filterUnits="objectBoundingBox"
+              id="filter-7"
+            >
+              <feGaussianBlur
+                stdDeviation="1"
+                in="SourceAlpha"
+                result="shadowBlurInner1"
+              ></feGaussianBlur>
+              <feOffset
+                dx="0"
+                dy="0"
+                in="shadowBlurInner1"
+                result="shadowOffsetInner1"
+              ></feOffset>
+              <feComposite
+                in="shadowOffsetInner1"
+                in2="SourceAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+                result="shadowInnerInner1"
+              ></feComposite>
+              <feColorMatrix
+                values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0"
+                type="matrix"
+                in="shadowInnerInner1"
+              ></feColorMatrix>
+            </filter>
+          </defs>
+          <g
+            id="canvas"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g transform="translate(-14.000000, -269.000000)">
+              <g id="progress-bar" transform="translate(18.000000, 273.000000)">
+                <mask id="mask-2" fill="white">
+                  <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="progressbar-mask">
+                  <use
+                    fill="black"
+                    fill-opacity="1"
+                    filter="url(#filter-3)"
+                    xlink:href="#path-1"
+                  ></use>
+                  <use
+                    fill="#414141"
+                    fill-rule="evenodd"
+                    xlink:href="#path-1"
+                  ></use>
+                  <use
+                    fill="black"
+                    fill-opacity="1"
+                    filter="url(#filter-4)"
+                    xlink:href="#path-1"
+                  ></use>
+                </g>
+                <g id="actual-progress" mask="url(#mask-2)">
+                  <use
+                    fill="black"
+                    fill-opacity="1"
+                    filter="url(#filter-6)"
+                    xlink:href="#progress-box"
+                  ></use>
+                  <use
+                    fill-opacity="0.5"
+                    fill="#FFFFFF"
+                    fill-rule="evenodd"
+                    xlink:href="#progress-box"
+                  ></use>
+                  <use
+                    fill="black"
+                    fill-opacity="1"
+                    filter="url(#filter-7)"
+                    xlink:href="#progress-box"
+                  ></use>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <!-- ########## Progressbar component END  ########## -->
+        <div id="update-messages"></div>
+        <div id="update-hints"></div>
+        <div id="update-estimate">&nbsp;</div>
+      </div>
+
+      <div id="popup-mask">
+        <div id="popup" class="center-box">
+          <div class="popup-content">
+            A new iOS update is now available. Please update from the iOS 12
+            beta.
+          </div>
+          <div class="button-bar">
+            <a href="#" onclick="startAnimation()">Update</a>
+            <!-- <a href="#">Any&aacute;d</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

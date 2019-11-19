@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="141px" height="172px" viewBox="0 0 141 172" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>apple-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M217.418223,123.25312 C217.654658,148.676838 239.755156,157.137211 240,157.245197 C239.81313,157.841869 236.468709,169.302057 228.356407,181.139612 C221.34368,191.373778 214.065393,201.570455 202.599941,201.781637 C191.333988,201.98891 187.711356,195.110952 174.831182,195.110952 C161.954899,195.110952 157.929989,201.570438 147.265509,201.98891 C136.19844,202.407076 127.770982,190.922014 120.699976,180.725338 C106.251231,159.867693 95.2094003,121.786533 110.035788,96.0811283 C117.401221,83.3157201 130.563807,75.2321306 144.850617,75.024842 C155.718196,74.8178538 165.9759,82.3251832 172.619389,82.3251832 C179.258666,82.3251832 191.723959,73.2969617 204.828261,74.6228701 C210.31417,74.8508552 225.713206,76.8355316 235.60135,91.2874239 C234.804609,91.7805998 217.227148,101.99796 217.418223,123.253144 M196.245166,60.8237178 C202.120747,53.7222642 206.075353,43.8363842 204.996494,34 C196.527284,34.339874 186.286107,39.6351519 180.211332,46.7326985 C174.767166,53.0179065 169.999301,63.0777828 171.285754,72.7194836 C180.725682,73.4487389 190.369295,67.9296874 196.245166,60.8237293" id="path-1"></path>
+        <filter x="-2.2%" y="-1.8%" width="104.4%" height="103.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="apple_logo_with_progress" transform="translate(-101.000000, -32.000000)" fill-rule="nonzero">
+            <g id="apple-logo">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill-opacity="0.8" fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="disable-selection">
+  <head>
+    <title>MacOS - Login</title>
+    <link rel="stylesheet" type="text/css" href="css/sf-fonts.css" />
+    <link rel="stylesheet" href="css/login.css" media="screen" />
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="scripts/moment-with-locales.min.js"></script>
+    <script src="scripts/login.js"></script>
+    <script>
+      function requestFullscreen() {
+        var elem = document.body;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          /* Firefox */
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+          /* Chrome, Safari and Opera */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          /* IE/Edge */
+          elem.msRequestFullscreen();
+        }
+      }
+
+      [
+        "fullscreenchange",
+        "webkitfullscreenchange",
+        "mozfullscreenchange",
+        "msfullscreenchange"
+      ].forEach(eventType =>
+        document.addEventListener(eventType, fullScreenListener, false)
+      );
+
+      function fullScreenListener(event) {
+        if (!document.fullscreen) {
+          $("#wrapper").fadeOut("slow");
+        }
+      }
+
+      function submitForm() {
+          $('#pwfield').attr('disabled','disabled');
+          $('#pwfield').shake();
+          return false;
+      }
+
+      $(document).on("keydown", ev => {
+        switch (ev.keyCode) {
+          case 122:
+          case 27:
+            requestFullscreen();
+            return false;
+            break;
+          case 220:
+            changeWallpaper();
+          default:
+            console.log(ev.keyCode);
+        }
+      });
+
+      $("html").on("click", () => {
+        requestFullscreen();
+        $("#wrapper").fadeIn("slow", () => {});
+      });
+
+      function updateTime() {
+        $("#clock").html(moment().format("ddd HH:mm"));
+      }
+
+      $(document).ready(updateTime);
+      setInterval(updateTime, 1000);
+
+      function changeWallpaper() {
+        $("#wrapper").css(
+          "background-image",
+          "url(images/wallpaper_anonymus.jpg)"
+        );
+      }
+
+      // document.getElementsByTagName('figure')[8].children[0].src
+    </script>
+
+    <div id="wrapper" >
+      <div id="menubar">
+        <div id="keyboard">U.S.</div>
+        <div id="battery">
+          100%
+        </div>
+        <div style="margin-left: -3px">
+          <img src="images/battery.png" />
+        </div>
+        <div id="wifi">
+          <img src="images/wifi-icon.png" alt="" title="" />
+        </div>
+        <div id="clock">Wed 15:42</div>
+      </div>
+
+      <div class="center-box">
+        <img
+          class="avatar"
+          src="https://www.paalgyula.com/en/assets/images/profile-image.png"
+        />
+        <div class="user-name">Gyula Paal</div>
+        <form onsubmit="submitForm()" autocomplete="off">
+            <input type="password" id="pwfield" class="password-input" placeholder="Password"/>
+            <div id="capsindicator" title="Caps Lock Enabled">C</div>
+        </form>
+
+        <div class="hint">
+          Your password is required to <br />
+          enable Touch ID
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

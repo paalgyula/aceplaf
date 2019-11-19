@@ -1,0 +1,118 @@
+@viewport {
+  width: device-width;
+  zoom: 1;
+  min-zoom: 1;
+  max-zoom: 1;
+  user-zoom: fixed;
+}
+
+body {
+  font-family: "SF Display";
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  background-color: #101010;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.disable-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.center-box {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#popup-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* visibility: hidden; */
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#popup {
+  border-radius: 17px;
+  background-color: rgba(229, 228, 229, 0.99);
+  min-width: 80px;
+  max-width: 250px !important;
+  margin: 0 auto;
+  color: #000000;
+  text-align: center;
+}
+
+.popup-content {
+  padding: 15px;
+  font-weight: 400;
+  font-size: 1.3em;
+  border-bottom: #9ca8c3 1px solid;
+}
+
+.popup-content:after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  /* transform: scale(0.9); */
+  box-shadow: 0px 1px 0px 0px rgba(178, 188, 209, 0.42);
+}
+
+.button-bar {
+  font-weight: 200;
+  display: table;
+  vertical-align: middle;
+  font-size: 1.4em;
+  /* height: 57px !important; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.button-bar a {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  display: table-cell;
+  color: #1d85ff !important;
+  text-decoration: none !important;
+}
+
+.button-bar a:not(:last-child) {
+  border-right: #9ca8c3 1px solid;
+}
+
+#loading-area img {
+  padding: 20px;
+}
+
+#update-messages {
+  margin-top: 15px;
+}
+
+.padded-content {
+  padding-top: 10px;
+}
+
+.placeholder {
+  display: "block";
+  height: 20px;
+}
